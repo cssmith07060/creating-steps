@@ -1,3 +1,5 @@
+const { updateLocale } = require("moment")
+
 const progress = document.getElementById('progress')
 const prev = document.getElementById('prev')
 const next = document.getElementById('next')
@@ -5,11 +7,19 @@ const circles = document.querySelectorAll('.circle')
 
 let currentActive = 1
 
-next.addEventListener('click', () => {
-    currentActive++
+prev.addEventListener('click', () => {
+    currentActive--
 
-    if (currentActive > circles.length) {
-        cuurentActive = circles.length
+    if (currentActive < 1) {
+        currentActive = 1
     }
+
+   update() 
     
 })
+
+function update() {
+    circles.forEach((circle, i) => {
+        
+    })
+}
